@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "./dist/index.html"
+    "start": "vite"
   },
   "dependencies": {
     "@types/react-helmet": "^6.1.6",
