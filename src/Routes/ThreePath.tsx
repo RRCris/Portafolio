@@ -6,8 +6,10 @@ import Welcome from "./Page/Welcome";
 export default function ThreePath() {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/welcome" element={<Welcome />} />
+      <Route path="/">
+        <Route index element={<App />} />
+        <Route path="welcome" element={<Welcome />} />
+      </Route>
     </Routes>
   );
 }
