@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Components/Button";
 import Iconify from "./Components/Iconify";
 import Stack from "./Components/Stack";
@@ -9,10 +10,12 @@ function App() {
   return (
     <div>
       <Stack spacing={4} st={{ height: "90px", background: "#c9c" }}>
-        <Button type="primary">
-          <Iconify icon="gis:arrow-o" />
-          <Typografy>children</Typografy>
-        </Button>
+        <Link to="/welcome">
+          <Button type="primary">
+            <Iconify icon="gis:arrow-o" />
+            <Typografy>Welcome</Typografy>
+          </Button>
+        </Link>
         <Button>
           <Iconify icon="gis:arrow-o" />
           hola
