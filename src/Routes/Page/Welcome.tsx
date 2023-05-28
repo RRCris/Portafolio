@@ -7,7 +7,7 @@ export default function Welcome() {
       title="Welcome | Developer Web"
       describe="pagina de bienvenida de el portafolio web"
     >
-      <h1>hola</h1>
+      <h1>Welcome</h1>
     </PageHead>
   );
 }
