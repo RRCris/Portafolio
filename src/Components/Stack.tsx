@@ -12,7 +12,7 @@ interface IStack {
     | "start";
   alignItems?: "center" | "baseline" | "end";
   wrap?: boolean;
-  children?: ReactNode[];
+  children?: any | undefined;
   st?: CSSProperties;
 }
 export default function Stack({
@@ -24,6 +24,8 @@ export default function Stack({
   children,
   st,
 }: IStack) {
+  // element to array
+  if (children && !children?.map) children = [children];
   //calcular spacing
   const spacingInPX = (spacing || 0) * 10 + "px";
   //direction of Spacing
@@ -42,7 +44,12 @@ export default function Stack({
         ...st,
       }}
     >
-      {children && children.map((n, i) => <div style={styleNode}>{n}</div>)}
+      {children &&
+        children.map((n: any, i: any) => (
+          <div key={i} style={styleNode}>
+            {n}
+          </div>
+        ))}
     </div>
   );
 }
