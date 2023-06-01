@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { TypeWidthWindow } from "../@Types/ResponsiveTypes";
 import { useAnimate } from "../Hooks/useAnimate";
+import { useLanguaje } from "../Hooks/useLanguaje";
 import useSizeWindow from "../Hooks/UseSizeWindow";
 import Button from "./Button";
 
@@ -40,6 +41,8 @@ type TypeSelectButton = "experience" | "habilities" | "capacities";
 
 //Component
 export default function NavBar() {
+  const languaje = useLanguaje();
+  console.log(languaje);
   const { responsive } = useSizeWindow();
   const [selectButton, setSelectButton] =
     useState<TypeSelectButton>("experience");
