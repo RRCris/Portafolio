@@ -6,8 +6,8 @@ import Typografy from "../../Components/Typografy";
 function BuildingPage() {
   return (
     <PageHead
-      title="Welcome | Developer Web"
-      describe="pagina de bienvenida de el portafolio web"
+      title="DevPage | Auctializacion"
+      describe="Esta Pagina no esta disponible por que esta siendo actulizada "
     >
       <Stack
         st={{ height: "100vh", width: "100vw" }}
@@ -15,7 +15,12 @@ function BuildingPage() {
         spacing={1}
       >
         <Iconify icon="carbon:ibm-process-mining" size={35} />
-        <Typografy>The Proyect Come Soon...</Typografy>
+        <Typografy>
+          Esta Pagina no esta disponible por que esta siendo actulizada
+        </Typografy>
+        <Typografy type="bodySmall">
+          Por favor intente nuevamente más tarde
+        </Typografy>
       </Stack>
     </PageHead>
   );
