@@ -6,7 +6,6 @@ import PageHead from "../../Components/PageHead";
 export default function Welcome() {
   return (
     <PageHead>
-      <NavBar />
       <h1>Welcome</h1>
       <Button type="text">hola</Button>
       <Button type="secondary">hola</Button>

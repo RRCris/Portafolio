@@ -20,9 +20,9 @@ import Welcome from "./Page/Welcome";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Routes>
-      <Route path="/" element={<Welcome />}></Route>
-    </Routes>
+    <Route path="/" element={<Layout />}>
+      <Route path="welcome" element={<Welcome />}></Route>
+    </Route>
   )
 );
 

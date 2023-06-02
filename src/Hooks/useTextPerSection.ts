@@ -20,7 +20,7 @@ export function useTextPerSection(segment: TypeSegments) {
   const text = AllText[languaje].segments[segment];
 
   //envia solo los headers de la pagina en donde esta
-  if (segment === "head") return text[segmentLocal];
+  if (segment === "head") return text[segmentLocal] || { title: "DefaultPage" };
 
   return text;
 }
