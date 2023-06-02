@@ -5,10 +5,7 @@ import Typografy from "../../Components/Typografy";
 
 function BuildingPage() {
   return (
-    <PageHead
-      title="DevPage | Auctializacion"
-      describe="Esta Pagina no esta disponible por que esta siendo actulizada "
-    >
+    <PageHead>
       <Stack
         st={{ height: "100vh", width: "100vw" }}
         justifyContent="center"

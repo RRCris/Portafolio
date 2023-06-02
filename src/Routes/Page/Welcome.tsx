@@ -5,10 +5,7 @@ import PageHead from "../../Components/PageHead";
 
 export default function Welcome() {
   return (
-    <PageHead
-      title="DevWeb | Bienvenida"
-      describe="pagina de bienvenida de el portafolio web"
-    >
+    <PageHead>
       <NavBar />
       <h1>Welcome</h1>
       <Button type="text">hola</Button>

@@ -4,10 +4,7 @@ import PageHead from "../../Components/PageHead";
 
 export default function Capacities() {
   return (
-    <PageHead
-      title="DevWeb | Capacidades"
-      describe="pagina en donde se muestra las capacidades del desarrollador"
-    >
+    <PageHead>
       <NavBar />
       Capacities
     </PageHead>

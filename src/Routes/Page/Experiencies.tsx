@@ -4,10 +4,7 @@ import PageHead from "../../Components/PageHead";
 
 export default function Experiencies() {
   return (
-    <PageHead
-      title="DevWeb | Experiencia"
-      describe="pagina en donde se ve la experiencia del desarrollador"
-    >
+    <PageHead>
       <NavBar />
       Experience
     </PageHead>

@@ -1,26 +1,36 @@
-import { createBrowserRouter, Navigate, useNavigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
+import NavBar from "../Components/NavBar";
 
 import NotFound from "./DefaultPage/NotFound";
 import PageError from "./DefaultPage/PageError";
 
 import BuildingPage from "./Page/BuildPage";
 import Capacities from "./Page/Capacities";
+import Experiencies from "./Page/Experiencies";
 import Habilities from "./Page/Habilities";
 import Welcome from "./Page/Welcome";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    errorElement: <PageError />,
-    children: [
-      { path: "", element: <Welcome /> },
-      { path: "habilities", element: <Habilities /> },
-      { path: "capacities", element: <Capacities /> },
-    ],
-  },
-  {
-    path: "*",
-    element: <Navigate to="/404" />,
-  },
-  { path: "/404", element: <NotFound /> },
-]);
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Routes>
+      <Route path="/" element={<Welcome />}></Route>
+    </Routes>
+  )
+);
+
+function Layout() {
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
+}
