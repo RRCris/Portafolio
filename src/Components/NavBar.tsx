@@ -43,9 +43,6 @@ type TypeSelectButton = "experience" | "habilities" | "capacities";
 
 //Component
 export default function NavBar() {
-  const result = useTextPerSection("head");
-  console.log(result);
-
   const { responsive } = useSizeWindow();
   const [selectButton, setSelectButton] =
     useState<TypeSelectButton>("experience");

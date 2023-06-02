@@ -5,7 +5,7 @@ import PageHead from "../../Components/PageHead";
 
 export default function Welcome() {
   return (
-    <PageHead>
+    <PageHead page="welcome">
       <h1>Welcome</h1>
       <Button type="text">hola</Button>
       <Button type="secondary">hola</Button>

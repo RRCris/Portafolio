@@ -1,9 +1,11 @@
 import {
+  BrowserRouter,
   createBrowserRouter,
   createRoutesFromElements,
   Navigate,
   Outlet,
   Route,
+  Router,
   Routes,
   useNavigate,
 } from "react-router-dom";
@@ -20,8 +22,19 @@ import Welcome from "./Page/Welcome";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route path="welcome" element={<Welcome />}></Route>
+    <Route path="/">
+      <Route index element={<Navigate to="/welcome" />} />
+      <Route path="welcome" element={<Welcome />} />
+      <Route path="services" element={<Layout />}>
+        <Route path="capacities" element={<Capacities />} />
+        <Route path="experience" element={<Experiencies />} />
+        <Route path="habilities" element={<Habilities />} />
+      </Route>
+      <Route path="/404" element={<Layout />}>
+        <Route index element={<NotFound />} />
+      </Route>
+
+      <Route path="*" element={<Navigate to="/404" />} />
     </Route>
   )
 );

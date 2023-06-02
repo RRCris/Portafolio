@@ -5,7 +5,7 @@ import Typografy from "../../Components/Typografy";
 
 function BuildingPage() {
   return (
-    <PageHead>
+    <PageHead page="buildPage">
       <Stack
         st={{ height: "100vh", width: "100vw" }}
         justifyContent="center"

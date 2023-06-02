@@ -6,21 +6,20 @@ export type TypeSegments = "head" | "navbar" | "welcome";
 export type TypePageSegment =
   | "404"
   | "buildPage"
-  | "capcities"
+  | "capacities"
   | "errorPage"
   | "experience"
   | "habilities"
   | "welcome";
-export function useTextPerSection(segment: TypeSegments) {
+export function useTextPerSection(
+  segment: TypeSegments,
+  page?: TypePageSegment
+) {
   const languaje = useLanguaje();
-  const segmentLocal = useLocation().pathname.replace(
-    "/",
-    ""
-  ) as TypePageSegment;
-  const text = AllText[languaje].segments[segment];
+  const text: any = AllText[languaje].segments[segment];
 
   //envia solo los headers de la pagina en donde esta
-  if (segment === "head") return text[segmentLocal] || { title: "DefaultPage" };
+  if (segment === "head") return text[page || "welcome"];
 
   return text;
 }

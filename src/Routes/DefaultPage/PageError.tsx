@@ -5,7 +5,7 @@ import Typografy from "../../Components/Typografy";
 
 export default function PageError() {
   return (
-    <PageHead title="DevWeb | Error" describe="el sitio web ha tenido un error">
+    <PageHead page="errorPage">
       <NavBar />
       <Typografy>Ha ocurrido un error</Typografy>
     </PageHead>

@@ -1,10 +1,12 @@
 import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
-import { useTextPerSection } from "../Hooks/useTextPerSection";
+import { TypePageSegment, useTextPerSection } from "../Hooks/useTextPerSection";
 
-export default function PageHead(props: { children: ReactNode }) {
-  const data = useTextPerSection("head");
-  console.log(data);
+export default function PageHead(props: {
+  children: ReactNode;
+  page?: TypePageSegment;
+}) {
+  const data = useTextPerSection("head", props.page);
   return (
     <div>
       <Helmet>
