@@ -1,24 +1,36 @@
 {
   "es": {
-    "titleTabs": {
-      "welcome": "Bienvenido",
-      "habilities": "Habilidades",
-      "capacities": "Capacidades",
-      "experiencie": "Experiencia",
-      "notFound": "No Encontrada",
-      "errorPage": "Error en Pagina",
-      "buildPage": "Actualizacion"
-    },
-    "descriptionTabs": {
-      "welcome": "pagina de bienvenida de el portafolio web",
-      "habilities": "pagina que enseña las habilidades del desarrollador",
-      "capacities": "pagina en donde se muestra las capacidades del desarrollador",
-      "experiencie": "pagina en donde se ve la experiencia del desarrollador",
-      "notFound": "la ruta que buscaba no existe",
-      "errorPage": "el sitio web ha tenido un error",
-      "buildPage": "Esta Pagina no esta disponible por que esta siendo actulizada"
-    },
     "segments": {
+      "head": {
+        "welcome": {
+          "title": "Bienvenido",
+          "description": "pagina de bienvenida de el portafolio web"
+        },
+        "habilities": {
+          "title": "Habilidades",
+          "description": "pagina que enseña las habilidades del desarrollador"
+        },
+        "capacities": {
+          "title": "Capacidades",
+          "description": "pagina en donde se muestra las capacidades del desarrollador"
+        },
+        "experience": {
+          "title": "Experiencia",
+          "description": "pagina en donde se ve la experiencia del desarrollador"
+        },
+        "404": {
+          "title": "No Encontrada",
+          "description": "la pagina solicitada no existia"
+        },
+        "errorPage": {
+          "title": "Error en Pagina",
+          "description": "el sitio web ha tenido un error"
+        },
+        "buildPage": {
+          "title": "Actualizando",
+          "description": "Esta Pagina no esta disponible por que esta siendo actulizada"
+        }
+      },
       "navbar": {
         "linkHabilities": "Habilidades",
         "linkExperience": "Experiencia",
@@ -33,5 +45,50 @@
       }
     }
   },
-  "en": {}
+  "en": {
+    "segments": {
+      "head": {
+        "welcome": {
+          "title": "Bienvenido",
+          "description": "pagina de bienvenida de el portafolio web"
+        },
+        "habilities": {
+          "title": "Habilidades",
+          "description": "pagina que enseña las habilidades del desarrollador"
+        },
+        "capacities": {
+          "title": "Capacidades",
+          "description": "pagina en donde se muestra las capacidades del desarrollador"
+        },
+        "experience": {
+          "title": "Experiencia",
+          "description": "pagina en donde se ve la experiencia del desarrollador"
+        },
+        "404": {
+          "title": "Experiencia",
+          "description": "pagina en donde se ve la experiencia del desarrollador"
+        },
+        "errorPage": {
+          "title": "Error en Pagina",
+          "description": "el sitio web ha tenido un error"
+        },
+        "buildPage": {
+          "title": "Actualizando",
+          "description": "Esta Pagina no esta disponible por que esta siendo actulizada"
+        }
+      },
+      "navbar": {
+        "linkHabilities": "Habilidades",
+        "linkExperience": "Experiencia",
+        "linkCapacities": "Capacidades"
+      },
+      "welcome": {
+        "title": "Bienvenidos",
+        "mainDescription": " soy un desarrollador web, front-end y back-end (full stack), me considero una persona  buena como desarrollador, ya que desde una temprana edad he estado enganchado al desarrollo de videojuegos lo que me ha proporcionado una lógica programática  y un aprendizaje autodidacta, gracias a mi experiencia en proyectos pasados  soy capaz de liderar un equipo de front-end, aportar ideas, soluciones, y observaciones al equipo de desarrollo, construir proyectos desde cero nutriéndolo con varias librerías  las cuales mejoran el comportamiento del mismo, en todos los proyectos que he estado he manejado las metodologías ágiles como SCRUM, soy un desarrollador capaz de realizar código limpio, entendible, reutilizable y con buenas prácticas.",
+        "buttonGoHabilities": "Mis Habilidades",
+        "buttonGoCapacities": "Mis Capacidades",
+        "buttonGoexperience": "Mi Experiecia"
+      }
+    }
+  }
 }

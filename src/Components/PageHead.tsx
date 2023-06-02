@@ -1,15 +1,13 @@
 import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
+import { useTextPerSection } from "../Hooks/useTextPerSection";
 
-export default function PageHead(props: {
-  title: string;
-  describe: string;
-  children: ReactNode;
-}) {
+export default function PageHead(props: { children: ReactNode }) {
+  const data = useTextPerSection("head");
   return (
     <div>
       <Helmet>
-        <title>{props.title}</title>
+        <title>{"WebCris |" + data.title}</title>
       </Helmet>
       {props.children}
     </div>

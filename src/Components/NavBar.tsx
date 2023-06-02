@@ -6,10 +6,12 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useLocation } from "react-router-dom";
 import { TypeWidthWindow } from "../@Types/ResponsiveTypes";
 import { useAnimate } from "../Hooks/useAnimate";
 import { useLanguaje } from "../Hooks/useLanguaje";
 import useSizeWindow from "../Hooks/UseSizeWindow";
+import { useTextPerSection } from "../Hooks/useTextPerSection";
 import Button from "./Button";
 
 import Stack from "./Stack";
@@ -41,37 +43,13 @@ type TypeSelectButton = "experience" | "habilities" | "capacities";
 
 //Component
 export default function NavBar() {
-  const languaje = useLanguaje();
-  console.log(languaje);
+  const result = useTextPerSection("head");
+  console.log(result);
+
   const { responsive } = useSizeWindow();
   const [selectButton, setSelectButton] =
     useState<TypeSelectButton>("experience");
   const refContainer = useRef<HTMLDivElement>(null);
-
-  //animate
-  // useAnimate(
-  //   refContainer.current,
-  //   (addEvent, gsap) => {
-  //     //add event to DOM
-  //     addEvent({
-  //       selector: ".ButtonNav",
-  //       event: "hover",
-  //       type: "to",
-  //       animation: { color: "#ACCF48", scale: 0.9 },
-  //     });
-
-  //     //orquestacion
-  //     const tl = gsap.timeline();
-  //     tl.from(".NavBar", {
-  //       duration: 0.6,
-  //       x: -1000,
-  //       // ease: Power1.easeIn
-  //     })
-  //       .from(".ButtonNav", { y: -30, opacity: 0, stagger: 0.2 })
-  //       .from(".BarSelect", { y: 56, opacity: 0 }, "-=0.3");
-  //   },
-  //   []
-  // );
 
   useAnimate(refContainer.current, () => {
     const tl = gsap.timeline();

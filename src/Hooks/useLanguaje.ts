@@ -1,10 +1,29 @@
+import { LanguajeKeys } from "./../@Types/Languaje.d";
 import { useEffect } from "react";
 import { useState } from "react";
+
+function languajeKey(rawLanguaje: string): LanguajeKeys {
+  switch (rawLanguaje) {
+    case "es_ES":
+      return "es";
+    case "es":
+      return "es";
+    case "en":
+      return "en";
+    case "en-US":
+      return "en";
+    default:
+      return "en";
+  }
+}
+
 export function useLanguaje() {
-  const [languaje, setLanguaje] = useState(window.navigator.language);
+  const [languaje, setLanguaje] = useState<LanguajeKeys>(
+    languajeKey(window.navigator.language)
+  );
 
   function handleChangeLanguaje() {
-    setLanguaje(window.navigator.language);
+    setLanguaje(languajeKey(window.navigator.language));
   }
 
   //add listener for change languaje
