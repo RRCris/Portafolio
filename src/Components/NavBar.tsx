@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TypeWidthWindow } from "../@Types/ResponsiveTypes";
 import { useAnimate } from "../Hooks/useAnimate";
 import { useLanguaje } from "../Hooks/useLanguaje";
@@ -18,6 +18,7 @@ import Stack from "./Stack";
 import Typografy from "./Typografy";
 
 //data
+const positionBarSelect = ["experience", "habilities", "capacities"];
 const heightNavBar = "56px";
 const toSizeNavbar = {
   Large: 1400,
@@ -43,9 +44,15 @@ type TypeSelectButton = "experience" | "habilities" | "capacities";
 
 //Component
 export default function NavBar() {
+  const { pathname } = useLocation();
+  const x =
+    positionBarSelect.find((pos) => pathname.includes(pos)) || "experience";
+
+  console.log(x);
   const { responsive } = useSizeWindow();
-  const [selectButton, setSelectButton] =
-    useState<TypeSelectButton>("experience");
+  const [selectButton, setSelectButton] = useState<TypeSelectButton>(
+    x as TypeSelectButton
+  );
   const refContainer = useRef<HTMLDivElement>(null);
 
   useAnimate(refContainer.current, () => {
@@ -77,18 +84,21 @@ export default function NavBar() {
             st={{ height: heightNavBar, position: "relative", zIndex: "10" }}
           >
             <ButtonNav
+              to="/services/experience"
               title="Mis Experiencias"
               select={selectButton === "experience"}
               onClick={() => setSelectButton("experience")}
               responsive={responsive}
             />
             <ButtonNav
+              to="/services/habilities"
               title="Mis Habilidades"
               select={selectButton === "habilities"}
               onClick={() => setSelectButton("habilities")}
               responsive={responsive}
             />
             <ButtonNav
+              to="/services/capacities"
               title="Mis Capacidades"
               select={selectButton === "capacities"}
               onClick={() => setSelectButton("capacities")}
@@ -102,16 +112,15 @@ export default function NavBar() {
 }
 
 function ButtonNav(props: {
+  to: string;
   title: string;
   select: boolean;
   onClick(): void;
   responsive: TypeWidthWindow;
 }) {
-  //color de seleccion
-  const color = props.select ? "#ACCF48" : "#FFF";
-
   return (
-    <div
+    <Link
+      to={props.to}
       className="ButtonNav"
       onClick={props.onClick}
       style={{ height: heightNavBar }}
@@ -129,7 +138,7 @@ function ButtonNav(props: {
           </Typografy>
         </Button>
       </Stack>
-    </div>
+    </Link>
   );
 }
 
@@ -141,7 +150,7 @@ function BarSelect(props: { width: number; position: number }) {
     ctx.add(() => {
       gsap.to(refRoot.current, {
         x: props.width * props.position,
-        width: props.width,
+        width: props.width || 300,
         duration: 0.3,
       });
     });
