@@ -49,12 +49,12 @@
     "segments": {
       "head": {
         "welcome": {
-          "title": "Bienvenido",
-          "description": "pagina de bienvenida de el portafolio web"
+          "title": "Welcome",
+          "description": "welcome to my web site"
         },
         "habilities": {
-          "title": "Habilidades",
-          "description": "pagina que enseña las habilidades del desarrollador"
+          "title": "habilities",
+          "description": "page for "
         },
         "capacities": {
           "title": "Capacidades",
